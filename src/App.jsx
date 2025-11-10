@@ -54,9 +54,14 @@ function App() {
       alert('OCCHIO NON PUOI METTERE UN TITOLO VUOTO')
     }
 
-
   }
 
+  //funzione per cancellare l'articolo
+  function distruttore(id) {
+    const listaFiltrata = article.filter((obj) => obj.id != id)
+    setArticle(listaFiltrata)
+
+  }
 
 
 
@@ -67,7 +72,11 @@ function App() {
         <ul>
           {article.map((obj) => (
             <li key={obj.id}>
-              {obj.title}
+              <h3>{obj.title}</h3>
+              <button onClick={() => distruttore(obj.id)}>
+                Delete article
+              </button>
+
             </li>
           ))}
         </ul>
