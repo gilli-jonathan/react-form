@@ -40,15 +40,19 @@ function App() {
   function aggiornaTitoli(event) {
     event.preventDefault()
 
-    const nuovoTitolo = {
-      id: article.length + 1,
-      title: newTitle
+    if (newTitle.length > 0) {
+
+      const nuovoTitolo = {
+        id: article.length + 1,
+        title: newTitle
+      }
+
+      setArticle([...articles, nuovoTitolo])
+      setNewTitle('')
+
+    } else {
+      alert('OCCHIO NON PUOI METTERE UN TITOLO VUOTO')
     }
-
-
-
-    setArticle([...articles, nuovoTitolo])
-
 
 
   }
