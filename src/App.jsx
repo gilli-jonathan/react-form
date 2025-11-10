@@ -3,6 +3,33 @@ import './App.css'
 
 function App() {
 
+  const articles = [
+    {
+      id: 1,
+      title: 'come sopravvivere a boolean e arrivare a fine corso'
+    },
+    {
+      id: 2,
+      title: '10 motivi per mollare tutto e fuggire in Mexico'
+    },
+    {
+      id: 3,
+      title: 'le scelte.. come le scelte sbagliate ti hanno portato qua'
+    },
+    {
+      id: 4,
+      title: '5.300 motivi per finire boolean.. primo i soldi, idem per gli altri motivi'
+    },
+    {
+      id: 5,
+      title: 'come e perché gli array di oggetti sono il male fatto codice'
+    },
+    {
+      id: 6,
+      title: 'Sanità mentale? persa tempo fa, come la tua che hai letto tutti i titoli'
+    }
+  ]
+
   return (
     <>
 
