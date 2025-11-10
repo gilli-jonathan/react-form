@@ -1,5 +1,8 @@
+import { useState } from "react"
+
 function App() {
 
+  //array originale
   const articles = [
     {
       id: 1,
@@ -27,17 +30,48 @@ function App() {
     }
   ]
 
+  //importo uno state che mi permette di modificare l'array originale
+  const [article, setArticle] = useState(articles)
+
+  //creo un nuovo state che mi permetta di riscrivere l'array di partenza
+  const [newTitle, setNewTitle] = useState('')
+
+  //creo una funzione che mi permetta di aggiornare l'array
+  function aggiornaTitoli(event) {
+    event.preventDefault()
+
+    const nuovoTitolo = {
+      id: article.length + 1,
+      title: newTitle
+    }
+
+
+
+    setArticle([...articles, nuovoTitolo])
+
+
+
+  }
+
+
+
+
   return (
     <>
       <div>
         <h1>WWW.ARTICOLI-FINTI.COM</h1>
         <ul>
-          {articles.map((obj) => (
+          {article.map((obj) => (
             <li key={obj.id}>
               {obj.title}
             </li>
           ))}
         </ul>
+
+        <form onSubmit={aggiornaTitoli}>
+          <input type="text" placeholder="inserisci il titolo del nuovo articolo" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
+          <button type="submit">Nuovo articolo</button>
+        </form>
 
       </div>
 
