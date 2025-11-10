@@ -47,7 +47,7 @@ function App() {
         title: newTitle
       }
 
-      setArticle([...articles, nuovoTitolo])
+      setArticle([...article, nuovoTitolo])
       setNewTitle('')
 
     } else {
