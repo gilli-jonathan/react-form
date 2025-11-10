@@ -1,6 +1,3 @@
-
-import './App.css'
-
 function App() {
 
   const articles = [
@@ -32,6 +29,18 @@ function App() {
 
   return (
     <>
+      <div>
+        <h1>WWW.ARTICOLI-FINTI.COM</h1>
+        <ul>
+          {articles.map((obj) => (
+            <li key={obj.id}>
+              {obj.title}
+            </li>
+          ))}
+        </ul>
+
+      </div>
+
 
     </>
   )
